@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
+    "render-build": "npm ci --include=dev && npm run build",
     "start": "node dist/server.js",
     "test:security": "NODE_ENV=test REDIS_URL=redis://127.0.0.1:1 AUTH_RATE_LIMIT_MAX=6 AUTH_RATE_LIMIT_WINDOW_MS=60000 AI_ROUTE_RATE_LIMIT_MAX=2 AI_ROUTE_RATE_LIMIT_WINDOW_MS=60000 CV_MAX_FILE_SIZE_BYTES=64 tsx scripts/security-blockers-tests.ts",
     "test:integration": "npm run test:security",
