@@ -1,0 +1,8 @@
+@layer utilities {
+  .btn-primary {
+    @apply rounded-md bg-primary text-primary-foreground hover:bg-primary/80;
+  }
+  .card {
+    @apply rounded-lg border border-border bg-background shadow-sm;
+  }
+}

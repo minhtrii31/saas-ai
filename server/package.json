@@ -1,0 +1,51 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test:security": "NODE_ENV=test REDIS_URL=redis://127.0.0.1:1 AUTH_RATE_LIMIT_MAX=6 AUTH_RATE_LIMIT_WINDOW_MS=60000 AI_ROUTE_RATE_LIMIT_MAX=2 AI_ROUTE_RATE_LIMIT_WINDOW_MS=60000 CV_MAX_FILE_SIZE_BYTES=64 tsx scripts/security-blockers-tests.ts",
+    "test:integration": "npm run test:security",
+    "test": "npm run test:security",
+    "smoke:production": "tsx scripts/production-smoke-test.ts",
+    "retention-cleanup": "tsx scripts/retention-cleanup.ts",
+    "auth-token-cleanup": "tsx scripts/auth-token-cleanup.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.16.1",
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.10.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mammoth": "^1.12.0",
+    "mongoose": "^9.6.2",
+    "morgan": "^1.10.1",
+    "multer": "^2.1.1",
+    "pdf-parse": "^2.4.5",
+    "redis": "^5.12.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.1.0",
+    "tsx": "^4.22.0",
+    "typescript": "^6.0.3"
+  }
+}

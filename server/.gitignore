@@ -1,0 +1,46 @@
+# Environment files with local or production secrets.
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Dependencies.
+/node_modules/
+
+# Build output and TypeScript cache.
+/dist/
+/build/
+*.tsbuildinfo
+
+# Test and coverage output.
+/coverage/
+/test-results/
+
+# Logs and diagnostics.
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local runtime artifacts.
+tmp/
+temp/
+uploads/
+*.pid
+*.seed
+*.local
+
+# Secrets, certificates, and keys.
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# OS/editor noise.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
